@@ -24,6 +24,13 @@
                     <label for="description" class="form-label">Edit description:</label>
                     <textarea type="text" value="{{$project->description}}" name="description" id="description" ></textarea>
                 </div>
+                <div class="mb-4 d-flex justify-content-between">
+                    <select for="type_id" class="form-label" type="string" name="type_id" id="type_id" class="form-control">
+                        @foreach ($types as $type)
+                        <option value="{{ old('id',$type->id) }}"> {{old('name', $type->name) }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <div>
                 <a href="{{route('admin.projects.edit', $project->id)}}">
                     <button type="submit" class="me-3 btn btn-success">Edit</button>  
