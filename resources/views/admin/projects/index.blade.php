@@ -20,7 +20,13 @@
                         <h2 class="card-title">
                             {{$project->title}}
                         </h2>
-                        type <strong>{{ $project->type->name }}</strong>
+                       <p class="card-text"> type: <strong> {{ $project->type->name }}</strong></p>
+                       <p class="card-text">Tecnologie usate:</p>
+                        <ul class="list-unstyled">
+                          @foreach($project->technologies as $technology)
+                              <li> <strong>{{ $technology->name }}</strong></li>
+                          @endforeach
+                        </ul>
                         <img src="{{$project->img_url}}" class="card-img-top" alt="project image">
                         <div class="card-body">
                             <h4 class="card-title">Date: {{$project->date}} </h4>
