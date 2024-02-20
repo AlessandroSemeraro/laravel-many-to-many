@@ -45,9 +45,7 @@ class ProjectController extends Controller
         return redirect ()->route('admin.projects.show', $newProject->id);
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
     public function show(string $id)
     {
         $project=Project::findOrFail($id);
@@ -63,6 +61,7 @@ class ProjectController extends Controller
         $project=Project::findOrFail($id);
         $types=Type::all();
         return view ('admin.projects.edit',compact('project','types'));
+
     }
 
     /**
